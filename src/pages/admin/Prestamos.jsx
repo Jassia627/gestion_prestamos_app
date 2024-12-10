@@ -13,6 +13,9 @@ import { useAuth } from '../../hooks/useAuth';
 import Pagos from '../../components/common/Pagos';
 import './Prestamos.css';
 
+
+
+
 const Prestamos = () => {
   const { currentUser } = useAuth();
   const [prestamos, setPrestamos] = useState([]);

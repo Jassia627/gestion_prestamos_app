@@ -13,6 +13,8 @@ import {
 } from 'firebase/firestore';
 import { useAuth } from '../../hooks/useAuth';
 import './Pagos.css';
+import Pagos from "../../components/common/pagos";
+
 
 const Pagos = ({ prestamoId, onClose, onPagoRegistrado }) => {
   const { currentUser } = useAuth();
