@@ -1,0 +1,163 @@
+/* Navbar principal */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: #FFD700; /* Color dorado */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+  
+  .navbar.active {
+    transform: translateX(0);
+  }
+  
+  /* Marca de la navbar */
+  .navbar-brand {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ítems del menú */
+  .navbar-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 10px;
+  }
+  
+  .navbar-item {
+    padding: 0.8rem;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar-item:hover,
+  .navbar-item.active {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+  
+  /* Botón de cerrar sesión */
+  .logout-button {
+    padding: 0.8rem;
+    background: #FF0000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #cc0000;
+  }
+  
+  /* Botón del menú móvil */
+  .menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-toggle span {
+    width: 24px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Overlay para fondo oscuro */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
+  
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Ajuste del contenido principal */
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+    padding-top: 80px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  .navbar.active + .main-content {
+    margin-left: 280px; /* Igual al ancho del menú */
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .navbar {
+      width: 80%;
+      max-width: 300px;
+    }
+  
+    .navbar.active + .main-content {
+      margin-left: 0; /* No empuja el contenido */
+    }
+  
+    .menu-toggle {
+      top: 10px;
+      left: 10px;
+    }
+  }
+  

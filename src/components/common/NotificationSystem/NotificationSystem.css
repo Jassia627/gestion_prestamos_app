@@ -1,0 +1,115 @@
+.notification-system {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .notification-trigger {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .notification-trigger:hover {
+    transform: scale(1.1);
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FF0000;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  .notification-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+  }
+  
+  .notification-panel h3 {
+    padding: 1rem;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    color: var(--text-color);
+  }
+  
+  .notification-list {
+    padding: 0.5rem;
+  }
+  
+  .notification-item {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notification-item.vencido {
+    background-color: #FEE2E2;
+    border-left: 4px solid #DC2626;
+  }
+  
+  .notification-item.proximo {
+    background-color: #FEF3C7;
+    border-left: 4px solid #F59E0B;
+  }
+  
+  .notification-item p {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+  }
+  
+  .notification-item small {
+    color: #666;
+    display: block;
+  }
+  
+  /* Animaciones */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .notification-panel {
+    animation: slideIn 0.3s ease;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .notification-system {
+      top: 70px;
+      right: 10px;
+    }
+  
+    .notification-panel {
+      width: calc(100vw - 20px);
+      right: -10px;
+    }
+  }

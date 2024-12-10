@@ -1,0 +1,233 @@
+/* Contenedor principal */
+.reportes-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
+  }
+  
+  /* Header */
+  .page-header {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+  }
+  
+  .page-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  /* Grid de estadísticas */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .stat-card h3 {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 0;
+  }
+  
+  .stat-value.success {
+    color: #059669;
+  }
+  
+  .stat-value.warning {
+    color: #dc2626;
+  }
+  
+  /* Grid de gráficos */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .chart-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .chart-container h3 {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+  
+  /* Loading */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 1rem;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Mensajes de error */
+  .error-message {
+    background: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #dc2626;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .reportes-container {
+      padding: 0.5rem;
+    }
+  
+    .page-header {
+      margin: -0.5rem -0.5rem 1rem -0.5rem;
+      border-radius: 0;
+    }
+  
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  
+    .charts-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    .chart-container {
+      padding: 1rem;
+      min-height: 350px;
+      overflow: hidden;
+    }
+  
+    .stat-card {
+      padding: 1rem;
+    }
+  
+    .stat-value {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Estilos para los gráficos */
+  .recharts-responsive-container {
+    min-height: 300px;
+  }
+  
+  .recharts-default-tooltip {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    padding: 0.5rem !important;
+  }
+  
+  .recharts-tooltip-label {
+    color: #666 !important;
+  }
+  
+  .recharts-tooltip-item {
+    color: var(--text-color) !important;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stat-card,
+  .chart-container {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* Ajustes para pantallas muy pequeñas */
+  @media (max-width: 480px) {
+    .stat-card h3 {
+      font-size: 0.8rem;
+    }
+  
+    .stat-value {
+      font-size: 1.1rem;
+    }
+  
+    .chart-container h3 {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Personalización de los gráficos */
+  .recharts-pie-label-line {
+    stroke: #666;
+  }
+  
+  .recharts-pie-label-text {
+    fill: #666;
+    font-size: 12px;
+  }
+  
+  .recharts-legend-item-text {
+    color: #666 !important;
+  }
+  
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: #e5e7eb;
+  }
+  
+  .recharts-xAxis .recharts-cartesian-axis-tick-value,
+  .recharts-yAxis .recharts-cartesian-axis-tick-value {
+    font-size: 12px;
+    fill: #666;
+  }

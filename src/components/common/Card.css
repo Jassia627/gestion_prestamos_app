@@ -1,0 +1,130 @@
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .card-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .field-label {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .field-value {
+    font-size: 0.875rem;
+    color: var(--text-color);
+  }
+  
+  /* Estado del préstamo */
+  .estado-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .estado-pendiente {
+    background-color: #fee2e2;
+    color: #dc2626;
+  }
+  
+  .estado-activo {
+    background-color: #dcfce7;
+    color: #15803d;
+  }
+  
+  .estado-pagado {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+  }
+  
+  /* Acciones */
+  .card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .btn-secondary {
+    background-color: #60a5fa;
+    color: white;
+  }
+  
+  .btn-danger {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  /* Búsqueda */
+  .search-container {
+    margin-bottom: 1rem;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.875rem;
+  }
+  
+  /* Montos */
+  .monto {
+    font-weight: 600;
+  }
+  
+  .monto.positivo {
+    color: #15803d;
+  }
+  
+  .monto.negativo {
+    color: #dc2626;
+  }
