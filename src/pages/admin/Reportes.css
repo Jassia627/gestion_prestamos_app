@@ -1,20 +1,16 @@
-/* Contenedor principal */
 .reportes-container {
     padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: calc(100vh - 60px);
   }
   
   /* Header */
   .page-header {
-    display: flex;
-    align-items: center;
     background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem;
+    border-radius: 12px;
     margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
   
   .page-title {
@@ -23,65 +19,145 @@
     color: var(--text-color);
   }
   
-  /* Grid de estadísticas */
-  .stats-grid {
+  /* Cards de estadísticas */
+  .stats-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .stat-card {
     background: white;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
   
-  .stat-card:hover {
-    transform: translateY(-2px);
+  .stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   
   .stat-card h3 {
-    color: #666;
+    margin: 0;
     font-size: 0.875rem;
-    margin: 0 0 0.5rem 0;
+    color: #666;
   }
   
   .stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
     margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
   }
   
   .stat-value.success {
-    color: #059669;
+    color: #10b981;
   }
   
   .stat-value.warning {
-    color: #dc2626;
+    color: #ef4444;
   }
   
-  /* Grid de gráficos */
-  .charts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.5rem;
+  /* Status cards */
+  .status-cards {
+    margin-bottom: 1.5rem;
   }
   
-  .chart-container {
+  .status-card {
     background: white;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
   
-  .chart-container h3 {
-    margin: 0 0 1.5rem 0;
-    color: var(--text-color);
+  .status-card h3 {
+    margin: 0 0 1rem 0;
     font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .status-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .status-label {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  .status-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
+  .status-value.warning {
+    color: #ef4444;
+  }
+  
+  /* Actividades recientes */
+  .recent-activities {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .recent-activities h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .activity-icon {
+    font-size: 1.25rem;
+  }
+  
+  .activity-details {
+    flex: 1;
+  }
+  
+  .activity-description {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-color);
+  }
+  
+  .activity-date {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.75rem;
+    color: #666;
   }
   
   /* Loading */
@@ -108,13 +184,13 @@
     100% { transform: rotate(360deg); }
   }
   
-  /* Mensajes de error */
+  /* Error message */
   .error-message {
     background: #fee2e2;
     border: 1px solid #ef4444;
     color: #dc2626;
     padding: 1rem;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-bottom: 1rem;
     text-align: center;
   }
@@ -122,57 +198,40 @@
   /* Responsive design */
   @media (max-width: 768px) {
     .reportes-container {
-      padding: 0.5rem;
+      padding: 0.75rem;
     }
   
     .page-header {
-      margin: -0.5rem -0.5rem 1rem -0.5rem;
+      margin: -0.75rem -0.75rem 1rem -0.75rem;
       border-radius: 0;
+      padding: 1rem;
     }
   
-    .stats-grid {
+    .page-title {
+      font-size: 1.25rem;
+    }
+  
+    .stats-cards {
       grid-template-columns: 1fr;
       gap: 0.75rem;
     }
   
-    .charts-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-  
-    .chart-container {
-      padding: 1rem;
-      min-height: 350px;
-      overflow: hidden;
-    }
-  
     .stat-card {
-      padding: 1rem;
+      padding: 1.25rem;
     }
   
     .stat-value {
       font-size: 1.25rem;
     }
-  }
   
-  /* Estilos para los gráficos */
-  .recharts-responsive-container {
-    min-height: 300px;
-  }
+    .status-card,
+    .recent-activities {
+      padding: 1rem;
+    }
   
-  .recharts-default-tooltip {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid #ddd !important;
-    border-radius: 4px !important;
-    padding: 0.5rem !important;
-  }
-  
-  .recharts-tooltip-label {
-    color: #666 !important;
-  }
-  
-  .recharts-tooltip-item {
-    color: var(--text-color) !important;
+    .activity-item {
+      padding: 0.75rem;
+    }
   }
   
   /* Animaciones */
@@ -188,46 +247,15 @@
   }
   
   .stat-card,
-  .chart-container {
+  .status-card,
+  .recent-activities {
     animation: fadeIn 0.3s ease-out;
   }
   
-  /* Ajustes para pantallas muy pequeñas */
-  @media (max-width: 480px) {
-    .stat-card h3 {
-      font-size: 0.8rem;
-    }
-  
-    .stat-value {
-      font-size: 1.1rem;
-    }
-  
-    .chart-container h3 {
-      font-size: 0.9rem;
-    }
+  .activity-item {
+    transition: transform 0.2s ease;
   }
   
-  /* Personalización de los gráficos */
-  .recharts-pie-label-line {
-    stroke: #666;
-  }
-  
-  .recharts-pie-label-text {
-    fill: #666;
-    font-size: 12px;
-  }
-  
-  .recharts-legend-item-text {
-    color: #666 !important;
-  }
-  
-  .recharts-cartesian-grid-horizontal line,
-  .recharts-cartesian-grid-vertical line {
-    stroke: #e5e7eb;
-  }
-  
-  .recharts-xAxis .recharts-cartesian-axis-tick-value,
-  .recharts-yAxis .recharts-cartesian-axis-tick-value {
-    font-size: 12px;
-    fill: #666;
+  .activity-item:hover {
+    transform: translateX(5px);
   }

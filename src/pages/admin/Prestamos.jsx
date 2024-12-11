@@ -10,7 +10,7 @@ import {
   getDoc 
 } from 'firebase/firestore';
 import { useAuth } from '../../hooks/useAuth';
-import Pagos from '../../components/common/Pagos';
+import Pagos from '@/components/common/Pagos';
 import './Prestamos.css';
 
 
